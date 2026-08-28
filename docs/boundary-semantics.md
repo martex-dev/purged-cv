@@ -84,6 +84,26 @@ quietly resolved, per the project's working-style rule about the book's
 definition. Anyone who needs the looser behaviour is, in practice, asking
 for a boundary sample that the purge exists to remove.
 
+### 3.2 The overlap test is a comparison, not a binary search
+
+AFML's `PurgedKFold.split` locates the right-hand purge boundary with
+`t1.index.searchsorted(t1[test].max())`. A binary search is only valid on
+sorted input, and `t1` — the label *end* times — is sorted only when every
+label has the same horizon.
+
+Variable horizons are ordinary, not exotic: a triple-barrier label closes
+whenever a barrier is first touched, so `end` routinely jumps around while
+`start` marches forward. On such data the book's binary search silently
+returns the wrong boundary and under-purges.
+
+This package therefore evaluates the overlap rule of section 3 as a direct
+elementwise comparison over all rows, which needs no ordering assumption on
+`end` at all. Binary search is used in exactly one place — locating the
+embargo's start within `start`, which *is* validated as sorted (section 2).
+
+The test suite keeps a deliberately non-monotonic `end` fixture as a
+permanent guard against this being "optimised" back into a `searchsorted`.
+
 ## 4. The embargo
 
 Purging removes label *overlap*. The embargo removes what purging cannot

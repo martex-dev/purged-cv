@@ -43,8 +43,13 @@ makes the gap attributable to purging rather than to fold geometry.
 
 ## Install
 
+Not on PyPI yet — publishing waits until the package has been used against real
+data. Install from source:
+
 ```bash
-pip install purged-cv
+git clone https://github.com/martex-dev/purged-cv
+cd purged-cv
+pip install -e .
 ```
 
 Requires Python 3.10+, `numpy` and `scikit-learn`. No pandas dependency (pandas

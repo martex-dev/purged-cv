@@ -23,7 +23,9 @@ dependencies = ["numpy>=1.23", "scikit-learn>=1.3"]
 test = ["pytest>=7", "pytest-cov"]
 
 [project.urls]
-Homepage = "https://github.com/mvnikolov2009/purged-cv"
+Homepage = "https://github.com/martex-dev/purged-cv"
+Repository = "https://github.com/martex-dev/purged-cv"
+Issues = "https://github.com/martex-dev/purged-cv/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
