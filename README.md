@@ -173,7 +173,9 @@ the full toolkit, use it.**
 
 purged-cv exists as the deliberately minimal alternative: one splitter, ~120
 statements, no pandas dependency, readable end to end in a sitting, and accepting
-a plain integer/positional index, which `purgedcv` rejects. If you would rather
+a plain integer/positional index — which `purgedcv` **as of version 0.1.4** does
+not, requiring a datetime-like or timedelta-like dtype. That may well change; the
+qualifier is there so this comparison stays honest if it does. If you would rather
 audit your cross-validator than trust it, that is the trade this package makes.
 
 ## Reference

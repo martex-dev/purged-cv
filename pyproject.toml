@@ -9,7 +9,7 @@ description = "Minimal, dependency-light sklearn-compatible purged k-fold cross-
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
-authors = [{ name = "mvnikolov2009", email = "mvnikolov2009@gmail.com" }]
+authors = [{ name = "martex-dev", email = "144735199+martex-dev@users.noreply.github.com" }]
 keywords = ["cross-validation", "time-series", "finance", "scikit-learn", "backtesting"]
 classifiers = [
     "Development Status :: 3 - Alpha",

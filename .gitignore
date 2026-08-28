@@ -10,3 +10,6 @@ htmlcov/
 venv/
 .idea/
 .vscode/
+
+# Local agent instructions, not part of the package
+CLAUDE.md
